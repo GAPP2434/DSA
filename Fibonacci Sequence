@@ -1,0 +1,38 @@
+import java.util.*;
+
+public class FobinacciSequence {
+    
+
+    static int fobinacci(int s){
+        if (s == 0){
+            return 0;
+        }
+        else if (s == 1){
+            return 1;
+        }
+        else{
+            return(fobinacci(s-1) + fobinacci(s-2));
+        }
+    }
+    public static void main(String[] args) {
+        int i;
+        int last, slast, result;
+        Scanner input = new Scanner(System.in);
+        System.out.println("");
+        System.out.print("Number of Fibonacci Sequence: ");
+        int yes = input.nextInt();
+        System.out.print("Fibonacci Sequence:");
+        for(i=0; i<=yes; i++){
+            System.out.print(fobinacci(i) + " ");
+            if ( i == yes){
+                last = fobinacci(i);
+                slast = fobinacci(i-1);
+                result = last + slast;
+                System.out.println("");
+                System.out.print("The Last Sequence is: " + slast + " + " + last + " = " + result);
+            }
+        }    
+    }
+}
+
+
